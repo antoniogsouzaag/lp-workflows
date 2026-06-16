@@ -3,58 +3,9 @@
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Eyebrow, SectionHeading } from "./ui/Primitives";
+import { SectionHeading } from "./ui/Primitives";
 import { Reveal } from "./ui/Reveal";
-
-export interface ProjectItem {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  href?: string;
-}
-
-const WORKFLOW_IMG =
-  "https://udcsokdtdqqdnoqozbxh.supabase.co/storage/v1/object/public/heros-lp/aglabs/workflow";
-
-const projects: ProjectItem[] = [
-  {
-    id: "youtube",
-    title: "YouTube Automático",
-    description:
-      "Criação de áudio e vídeo completo automatizado — do roteiro à publicação, sem intervenção manual.",
-    image: `${WORKFLOW_IMG}/youtube.jpg`,
-    href: "https://www.youtube.com/@GospelExpress-c3j",
-  },
-  {
-    id: "atendimento",
-    title: "Atendimento Inteligente",
-    description:
-      "Mensagens no WhatsApp respondidas por IA 24/7 — tria, resolve e só escala para um humano quando precisa.",
-    image: `${WORKFLOW_IMG}/atendimento.jpg`,
-  },
-  {
-    id: "leads",
-    title: "Qualificação de Leads",
-    description:
-      "Leads do formulário classificados por score, distribuídos ao vendedor certo e nutridos até a proposta.",
-    image: `${WORKFLOW_IMG}/leads.jpg`,
-  },
-  {
-    id: "comentarios",
-    title: "Comentários Automáticos",
-    description:
-      "Comentários no Instagram e YouTube respondidos automaticamente, no tom da marca, com encaminhamento de oportunidades.",
-    image: `${WORKFLOW_IMG}/comentarios.jpg`,
-  },
-  {
-    id: "redes",
-    title: "Redes Sociais no Automático",
-    description:
-      "Conteúdo gerado, agendado e publicado sozinho nas redes — calendário sempre cheio, zero esforço manual.",
-    image: `${WORKFLOW_IMG}/redes-automaticas.jpg`,
-  },
-];
+import { projects } from "./projects-data";
 
 export function ProjectsGallery() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -165,26 +116,14 @@ export function ProjectsGallery() {
                     <p className="mb-3 line-clamp-2 text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                       {item.description}
                     </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-sm transition-all duration-200 hover:opacity-80"
-                        style={{ color: "rgba(52,226,126,0.8)" }}
-                      >
-                        Ver projeto
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                      </a>
-                    ) : (
-                      <div
-                        className="flex items-center text-sm"
-                        style={{ color: "rgba(52,226,126,0.8)" }}
-                      >
-                        Ver projeto
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                      </div>
-                    )}
+                    <a
+                      href={`/solucoes#${item.id}`}
+                      className="flex items-center text-sm transition-all duration-200 hover:opacity-80"
+                      style={{ color: "rgba(52,226,126,0.8)" }}
+                    >
+                      Ver solução
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </a>
                   </div>
                 </div>
               </div>

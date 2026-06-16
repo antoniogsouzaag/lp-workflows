@@ -45,8 +45,8 @@ export function CtaSection() {
       <div className="relative z-[5] mx-auto flex max-w-7xl flex-col px-6 pb-[320px] pt-20 sm:px-8 sm:pb-[380px] lg:min-h-[600px] lg:justify-center lg:px-14 lg:py-32 lg:pb-32">
         <Reveal delay={80}>
           <h2 className="max-w-2xl text-4xl font-light leading-[1.08] tracking-tightest text-cloud sm:text-5xl lg:text-7xl lg:leading-[1.05]">
-            Transforme seu{" "}
-            <span className="dim">workflow</span>
+            Transforme suas{" "}
+            <span className="dim">rotinas</span>
             <br />
             com automação
           </h2>
@@ -56,22 +56,16 @@ export function CtaSection() {
           </p>
         </Reveal>
 
-        {/* Form */}
+        {/* CTA WhatsApp */}
         <Reveal delay={160}>
-          <form className="mt-6 flex w-full max-w-sm flex-col gap-3 sm:mt-8 sm:flex-row" action="#">
-            <input
-              type="email"
-              required
-              placeholder="Seu melhor e-mail"
-              className="h-12 w-full rounded-sm border border-line bg-black/40 px-5 text-[14px] text-cloud placeholder:text-faint outline-none transition-colors focus:border-emerald/50 sm:flex-1"
-            />
-            <button
-              type="submit"
-              className="btn-glow h-12 w-full rounded-sm px-6 text-[14px] font-semibold sm:w-auto"
-            >
-              Começar agora
-            </button>
-          </form>
+          <a
+            href="https://wa.me/556493259857"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-glow mt-6 inline-flex h-12 w-full max-w-sm items-center justify-center rounded-sm px-6 text-[14px] font-semibold sm:mt-8 sm:w-auto"
+          >
+            Falar no WhatsApp
+          </a>
           <p className="mt-3 text-[12px] text-faint">
             Sem compromisso · Resposta em até 1 dia útil
           </p>
