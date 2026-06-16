@@ -27,9 +27,9 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Soluções",
     links: [
-      { label: "Automação de processos", href: "#fluxo" },
-      { label: "Integração de sistemas", href: "#confiar" },
-      { label: "IA aplicada", href: "#resultados" },
+      { label: "Automação de processos", href: "/#fluxo" },
+      { label: "Integração de sistemas", href: "/#confiar" },
+      { label: "IA aplicada", href: "/#resultados" },
       { label: "Casos de uso", href: "/solucoes" },
     ],
   },
@@ -48,7 +48,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Blog", href: "https://aglabs.ia.br/blog" },
       { label: "Guia de automação", href: "/solucoes" },
       { label: "Contato", href: "https://wa.me/556493259857" },
-      { label: "FAQ", href: "#" },
+      { label: "FAQ", href: "/solucoes#faq" },
     ],
   },
   {
@@ -107,13 +107,14 @@ export function Footer() {
         style={{ background: "linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0.7) 35%, transparent 100%)" }}
       />
 
-      {/* Glow suave emergindo de baixo */}
+      {/* Glow suave emergindo de baixo — saindo da tela */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1]"
+        className="pointer-events-none absolute inset-x-0 z-[1]"
         style={{
+          bottom: "-22%",
           height: "80%",
-          background: "radial-gradient(ellipse 70% 100% at 50% 100%, rgba(52,226,126,0.12) 0%, rgba(52,226,126,0.04) 35%, transparent 72%)",
+          background: "radial-gradient(ellipse 90% 100% at 50% 100%, rgba(52,226,126,0.20) 0%, rgba(52,226,126,0.08) 35%, transparent 72%)",
           filter: "blur(30px)",
         }}
       />

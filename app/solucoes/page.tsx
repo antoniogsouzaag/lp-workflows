@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Plus } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,6 +11,29 @@ export const metadata: Metadata = {
   description:
     "Conheça em detalhe cada automação da AG LABS: criação de vídeos, atendimento no WhatsApp, qualificação de leads, comentários e redes sociais no automático.",
 };
+
+const faqs = [
+  {
+    q: "Quanto tempo leva para colocar uma automação no ar?",
+    a: "Depende do escopo, mas a maioria dos projetos entra em produção entre 1 e 4 semanas. Começamos com um diagnóstico gratuito para mapear o que gera mais retorno e priorizar a primeira entrega.",
+  },
+  {
+    q: "Preciso trocar as ferramentas que já uso?",
+    a: "Não. Nossas automações se integram ao seu stack atual — WhatsApp, CRM, planilhas, redes sociais e o que mais você já usa. A ideia é conectar o que existe, não recomeçar do zero.",
+  },
+  {
+    q: "As automações usam inteligência artificial?",
+    a: "Sim, quando faz sentido. Combinamos automação de workflows com IA para tarefas como atendimento, geração de conteúdo e qualificação de leads — sempre no tom da sua marca e com supervisão.",
+  },
+  {
+    q: "E se eu precisar de algo fora dessas soluções?",
+    a: "Todas as automações são sob medida. As soluções acima são exemplos do que já entregamos, mas desenhamos fluxos específicos para o seu processo. É só falar com a gente.",
+  },
+  {
+    q: "Como funciona o suporte depois da entrega?",
+    a: "Acompanhamos a automação em produção, fazemos ajustes e monitoramos resultados. Você nunca fica sozinho com o fluxo rodando.",
+  },
+];
 
 export default function SolucoesPage() {
   return (
@@ -105,6 +128,36 @@ export default function SolucoesPage() {
           );
         })}
       </div>
+
+      {/* FAQ */}
+      <section id="faq" className="scroll-mt-28 border-t border-line">
+        <div className="mx-auto max-w-3xl px-5 py-20 lg:px-8 lg:py-24">
+          <Reveal>
+            <Eyebrow>FAQ</Eyebrow>
+            <SectionHeading className="mt-5">
+              Perguntas{" "}
+              <span className="text-gradient-green">frequentes</span>
+            </SectionHeading>
+          </Reveal>
+
+          <Reveal delay={80} className="mt-10 divide-y divide-line border-y border-line">
+            {faqs.map((item) => (
+              <details key={item.q} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium text-cloud transition-colors hover:text-emerald">
+                  {item.q}
+                  <Plus
+                    size={18}
+                    className="shrink-0 text-mist transition-transform duration-300 group-open:rotate-45"
+                  />
+                </summary>
+                <p className="mt-3 text-[14px] leading-relaxed text-mist">
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </Reveal>
+        </div>
+      </section>
 
       {/* CTA final */}
       <section className="border-t border-line">
