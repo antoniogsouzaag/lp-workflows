@@ -32,14 +32,14 @@ export default function TechShowcase({ items }: TechShowcaseProps) {
   return (
     <div className="mx-auto flex w-full max-w-5xl select-none flex-col items-start gap-8 font-sans md:flex-row md:gap-10 lg:gap-14">
       {/* ── Esquerda: grade de logos ── */}
-      <div className="flex flex-shrink-0 gap-2 overflow-x-auto pb-1 md:gap-3 md:pb-0">
+      <div className="flex w-full max-w-full flex-shrink-0 gap-2 overflow-x-auto pb-1 md:w-auto md:max-w-none md:gap-3 md:pb-0">
         {/* Coluna 1 */}
         <div className="flex flex-col gap-2 md:gap-3">
           {col1.map((item) => (
             <LogoCard
               key={item.id}
               item={item}
-              className="h-[120px] w-[110px] sm:h-[140px] sm:w-[130px] md:h-[165px] md:w-[155px]"
+              className="h-[110px] w-[100px] sm:h-[140px] sm:w-[130px] md:h-[165px] md:w-[155px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -52,7 +52,7 @@ export default function TechShowcase({ items }: TechShowcaseProps) {
             <LogoCard
               key={item.id}
               item={item}
-              className="h-[132px] w-[122px] sm:h-[155px] sm:w-[145px] md:h-[182px] md:w-[172px]"
+              className="h-[122px] w-[112px] sm:h-[155px] sm:w-[145px] md:h-[182px] md:w-[172px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -65,7 +65,7 @@ export default function TechShowcase({ items }: TechShowcaseProps) {
             <LogoCard
               key={item.id}
               item={item}
-              className="h-[125px] w-[115px] sm:h-[146px] sm:w-[136px] md:h-[172px] md:w-[162px]"
+              className="h-[114px] w-[105px] sm:h-[146px] sm:w-[136px] md:h-[172px] md:w-[162px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
