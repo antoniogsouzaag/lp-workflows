@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee         { animation: marquee 45s linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse 55s linear infinite; }
+
+:root {
+  --grid: rgba(255, 255, 255, 0.035);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0c0a;
+  overflow-x: hidden;
+}
+
+/* ---- Dotted grid background (assinatura FlowTune) ---- */
+.bg-dotgrid {
+  background-image: radial-gradient(var(--grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -13px -13px;
+}
+
+.bg-linegrid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Fade radial das bordas — vinheta escura */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(7, 9, 7, 0.9) 100%
+  );
+}
+
+/* Headline bicolor — palavras apagadas (cinza médio legível, como nas refs) */
+.dim {
+  color: rgba(237, 239, 237, 0.4);
+}
+
+/* Wordmark fantasma gigante atrás do device (estilo FlowTune) */
+.ghost-word {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.07);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Palco 3D para o mockup do dashboard */
+.stage-3d {
+  perspective: 1400px;
+  perspective-origin: 45% 15%;
+}
+.device-tilt {
+  transform: rotateX(8deg) rotateY(-12deg);
+}
+@media (max-width: 900px) {
+  .device-tilt {
+    transform: rotateX(4deg) rotateY(-6deg);
+  }
+}
+
+/* Glass card */
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.008)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.glass-strong {
+  background: linear-gradient(
+    160deg,
+    rgba(20, 24, 20, 0.9),
+    rgba(10, 12, 10, 0.85)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+/* Texto com gradiente verde */
+.text-gradient-green {
+  background: linear-gradient(180deg, #eafff3 0%, #5bf59b 55%, #25c46a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botão primário com glow */
+.btn-glow {
+  position: relative;
+  background: linear-gradient(180deg, #5bf59b 0%, #2bd86f 100%);
+  color: #06210f;
+  box-shadow:
+    0 0 0 1px rgba(91, 245, 155, 0.4),
+    0 10px 40px -10px rgba(52, 226, 126, 0.6);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(91, 245, 155, 0.6),
+    0 16px 50px -10px rgba(52, 226, 126, 0.8);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s, background 0.25s;
+}
+.btn-ghost:hover {
+  border-color: rgba(91, 245, 155, 0.4);
+  background: rgba(52, 226, 126, 0.06);
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070907;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c221c;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a322a;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
