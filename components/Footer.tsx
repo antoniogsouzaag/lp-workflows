@@ -45,18 +45,18 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Recursos",
     links: [
-      { label: "Blog", href: "#" },
-      { label: "Guia de automação", href: "#" },
+      { label: "Blog", href: "https://aglabs.ia.br/blog" },
+      { label: "Guia de automação", href: "https://aglabs.ia.br/blog" },
       { label: "FAQ", href: "#" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Termos de uso", href: "#" },
-      { label: "Privacidade", href: "#" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/" },
-      { label: "Instagram", href: "https://www.instagram.com/" },
+      { label: "Termos de uso", href: "/termos" },
+      { label: "Privacidade", href: "/privacidade" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/ag-labs" },
+      { label: "Instagram", href: "https://www.instagram.com/ag_labs/" },
     ],
   },
 ];

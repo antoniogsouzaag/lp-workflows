@@ -17,6 +17,58 @@
   --grid: rgba(255, 255, 255, 0.035);
 }
 
+/* ---- Páginas legais (termos / privacidade) ---- */
+.legal-prose {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.legal-prose h2 {
+  color: #e8efe9;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+.legal-prose p {
+  margin-bottom: 1rem;
+}
+.legal-prose ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.1rem;
+  list-style: none;
+}
+.legal-prose li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.legal-prose li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #34e27e;
+  opacity: 0.7;
+}
+.legal-prose a {
+  color: rgba(52, 226, 126, 0.85);
+  transition: color 0.2s;
+}
+.legal-prose a:hover {
+  color: #34e27e;
+}
+.legal-prose strong {
+  color: #e8efe9;
+  font-weight: 600;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
 }

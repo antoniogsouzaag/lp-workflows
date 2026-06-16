@@ -34,8 +34,8 @@ function IconLinkedin() {
 }
 
 const socials = [
-  { href: "https://www.instagram.com/", Icon: IconInstagram, label: "Instagram" },
-  { href: "https://www.linkedin.com/", Icon: IconLinkedin, label: "LinkedIn" },
+  { href: "https://www.instagram.com/ag_labs/", Icon: IconInstagram, label: "Instagram" },
+  { href: "https://www.linkedin.com/company/ag-labs", Icon: IconLinkedin, label: "LinkedIn" },
 ];
 
 export function AboutAgLabs() {
