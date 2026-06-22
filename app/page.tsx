@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { graph, homeWebPageSchema, serviceSchema } from "@/lib/seo";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { HeroIntro } from "@/components/HeroIntro";
@@ -12,9 +15,14 @@ import { AboutAgLabs } from "@/components/AboutAgLabs";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <main className="relative">
+      <JsonLd data={graph(homeWebPageSchema, serviceSchema)} />
       <Nav />
       <Hero />
       <HeroIntro />

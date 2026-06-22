@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Termos de Uso — AG LABS",
+  title: "Termos de Uso",
   description:
     "Termos de Uso dos serviços de automação e do site da AG LABS.",
+  alternates: { canonical: "/termos" },
+  robots: { index: true, follow: true },
 };
 
 export default function TermosPage() {

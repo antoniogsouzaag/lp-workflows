@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade — AG LABS",
+  title: "Política de Privacidade",
   description:
     "Como a AG LABS coleta, usa e protege seus dados pessoais, em conformidade com a LGPD.",
+  alternates: { canonical: "/privacidade" },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacidadePage() {

@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
+import { SITE, SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -10,28 +13,66 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "AG LABS — Automações inteligentes que escalam seu negócio",
-  description:
-    "A AG LABS desenha, integra e opera automações sob medida: conecte ferramentas, elimine trabalho manual e ganhe visibilidade total dos seus fluxos. Resultados em semanas, não meses.",
-  keywords: [
-    "automação",
-    "automações",
-    "workflow",
-    "integração",
-    "IA",
-    "AG LABS",
-    "RevOps",
-    "n8n",
-    "make",
-  ],
-  openGraph: {
-    title: "AG LABS — Automações inteligentes que escalam seu negócio",
-    description:
-      "Conecte ferramentas, elimine trabalho manual e ganhe visibilidade total dos seus fluxos.",
-    type: "website",
-    locale: "pt_BR",
-    images: [{ url: "/icon-512.png", width: 512, height: 512 }],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE.title,
+    template: "%s — AG LABS",
   },
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.orgUrl }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  keywords: [...SITE.keywords],
+  alternates: {
+    canonical: "/",
+  },
+  category: "technology",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: SITE.locale,
+    url: SITE_URL,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+    images: [
+      {
+        url: SITE.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "AG LABS — Automações que escalam",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: [SITE.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: SITE.themeColor,
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -40,7 +81,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={urbanist.variable}>
+    <html lang={SITE.lang} className={urbanist.variable}>
+      <head>
+        <JsonLd data={graph(organizationSchema, websiteSchema)} />
+      </head>
       <body className="bg-ink text-cloud font-sans antialiased selection:bg-emerald/30 selection:text-white">
         {children}
       </body>

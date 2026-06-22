@@ -5,11 +5,25 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow, SectionHeading } from "@/components/ui/Primitives";
 import { projects } from "@/components/projects-data";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  graph,
+  serviceSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Soluções — AG LABS",
+  title: "Soluções",
   description:
     "Conheça em detalhe cada automação da AG LABS: criação de vídeos, atendimento no WhatsApp, qualificação de leads, comentários e redes sociais no automático.",
+  alternates: { canonical: "/solucoes" },
+  openGraph: {
+    title: "Soluções — AG LABS",
+    description:
+      "Cada automação da AG LABS em detalhe: vídeo, atendimento no WhatsApp, qualificação de leads e redes sociais no automático.",
+    url: "/solucoes",
+  },
 };
 
 const faqs = [
@@ -38,6 +52,16 @@ const faqs = [
 export default function SolucoesPage() {
   return (
     <main className="relative min-h-screen" style={{ background: "#050505" }}>
+      <JsonLd
+        data={graph(
+          serviceSchema,
+          faqSchema(faqs),
+          breadcrumbSchema([
+            { name: "Início", path: "/" },
+            { name: "Soluções", path: "/solucoes" },
+          ]),
+        )}
+      />
       <Nav />
 
       {/* Cabeçalho */}
