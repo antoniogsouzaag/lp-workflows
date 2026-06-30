@@ -35,7 +35,7 @@ export const organizationSchema = {
     name: "Brasil",
   },
   knowsLanguage: ["pt-BR"],
-  sameAs: [SITE.social.linkedin, SITE.social.instagram],
+  sameAs: [SITE.social.linkedin, SITE.social.instagram, SITE.social.facebook, SITE.social.x],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",

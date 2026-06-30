@@ -59,7 +59,7 @@ export function CtaSection() {
         {/* CTA WhatsApp */}
         <Reveal delay={160}>
           <a
-            href="https://wa.me/556493259857"
+            href="https://wa.me/5564993259857"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-glow mt-6 inline-flex h-12 w-full max-w-sm items-center justify-center rounded-sm px-6 text-[14px] font-semibold sm:mt-8 sm:w-auto"

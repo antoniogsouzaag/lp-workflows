@@ -195,7 +195,7 @@ export default function SolucoesPage() {
               automações que mais geram retorno.
             </p>
             <a
-              href="https://wa.me/556493259857"
+              href="https://wa.me/5564993259857"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glow mt-8 inline-flex h-12 items-center justify-center rounded-sm px-7 text-[14px] font-semibold"

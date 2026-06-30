@@ -30,12 +30,14 @@ export const SITE = {
   themeColor: "#050505",
   accentColor: "#34E27E",
   // Contato
-  whatsapp: "https://wa.me/556493259857",
-  telephone: "+556493259857",
+  whatsapp: "https://wa.me/5564993259857",
+  telephone: "+5564993259857",
   // Redes
   social: {
     instagram: "https://www.instagram.com/ag_labs/",
     linkedin: "https://www.linkedin.com/company/ag-labs",
+    facebook: "https://www.facebook.com/profile.php?id=61573483665476",
+    x: "https://x.com/aglabsrv",
   },
   keywords: [
     "automação de processos",
